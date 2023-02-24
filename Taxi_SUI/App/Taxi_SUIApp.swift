@@ -11,7 +11,7 @@ import SwiftUI
 struct Taxi_SUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		22D7FEB629A954D500CA507D /* Taxi_SUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FEB529A954D500CA507D /* Taxi_SUIApp.swift */; };
-		22D7FEB829A954D500CA507D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FEB729A954D500CA507D /* ContentView.swift */; };
 		22D7FEBA29A954DB00CA507D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D7FEB929A954DB00CA507D /* Assets.xcassets */; };
 		22D7FEBD29A954DB00CA507D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D7FEBC29A954DB00CA507D /* Preview Assets.xcassets */; };
+		22D7FECB29A9564400CA507D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FECA29A9564400CA507D /* HomeView.swift */; };
+		22D7FECD29A9570A00CA507D /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FECC29A9570A00CA507D /* MapViewRepresentable.swift */; };
+		22D7FECF29A959CB00CA507D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FECE29A959CB00CA507D /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		22D7FEB229A954D500CA507D /* Taxi_SUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxi_SUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D7FEB529A954D500CA507D /* Taxi_SUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxi_SUIApp.swift; sourceTree = "<group>"; };
-		22D7FEB729A954D500CA507D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22D7FEB929A954DB00CA507D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22D7FEBC29A954DB00CA507D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22D7FECA29A9564400CA507D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		22D7FECC29A9570A00CA507D /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		22D7FECE29A959CB00CA507D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,11 @@
 		22D7FEB429A954D500CA507D /* Taxi_SUI */ = {
 			isa = PBXGroup;
 			children = (
-				22D7FEB529A954D500CA507D /* Taxi_SUIApp.swift */,
-				22D7FEB729A954D500CA507D /* ContentView.swift */,
+				22D7FEC329A9557E00CA507D /* App */,
+				22D7FEC429A9558B00CA507D /* Core */,
+				22D7FEC729A955AA00CA507D /* Models */,
+				22D7FEC629A955A000CA507D /* Managers */,
+				22D7FEC529A9559700CA507D /* Extensions */,
 				22D7FEB929A954DB00CA507D /* Assets.xcassets */,
 				22D7FEBB29A954DB00CA507D /* Preview Content */,
 			);
@@ -65,6 +72,61 @@
 				22D7FEBC29A954DB00CA507D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22D7FEC329A9557E00CA507D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				22D7FEB529A954D500CA507D /* Taxi_SUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		22D7FEC429A9558B00CA507D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				22D7FEC929A9560700CA507D /* Views */,
+				22D7FEC829A955FF00CA507D /* ViewModels */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		22D7FEC529A9559700CA507D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		22D7FEC629A955A000CA507D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				22D7FECE29A959CB00CA507D /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		22D7FEC729A955AA00CA507D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22D7FEC829A955FF00CA507D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		22D7FEC929A9560700CA507D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22D7FECA29A9564400CA507D /* HomeView.swift */,
+				22D7FECC29A9570A00CA507D /* MapViewRepresentable.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D7FEB829A954D500CA507D /* ContentView.swift in Sources */,
+				22D7FECF29A959CB00CA507D /* LocationManager.swift in Sources */,
 				22D7FEB629A954D500CA507D /* Taxi_SUIApp.swift in Sources */,
+				22D7FECD29A9570A00CA507D /* MapViewRepresentable.swift in Sources */,
+				22D7FECB29A9564400CA507D /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +334,13 @@
 				DEVELOPMENT_TEAM = LP6DZ5N5Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find you nearby drivers and rides";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +365,13 @@
 				DEVELOPMENT_TEAM = LP6DZ5N5Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find you nearby drivers and rides";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

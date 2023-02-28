@@ -12,10 +12,12 @@ struct MapViewActionButton: View {
     
     var body: some View {
         Button {
-            showLocationSearchView.toggle()
+            withAnimation(.spring()) {
+                showLocationSearchView.toggle()
+            }
         } label: {
-            Image(systemName: "line.3.horizontal")
-                .font(.title2)
+            Image(systemName: showLocationSearchView ? "arrow.left" : "line.3.horizontal")
+                .font(showLocationSearchView ? .title3 : .title2)
                 .foregroundColor(.black)
                 .padding()
                 .background(.white)

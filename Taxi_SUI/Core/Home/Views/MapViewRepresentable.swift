@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MapViewRepresentable: UIViewRepresentable {
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    
     let mapView = MKMapView()
     let locationManager = LocationManager()
     
@@ -22,7 +24,9 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        
+        if let coordinate = locationViewModel.selectedLocationCoordinate {
+            print("DEBUG: Selected coordinates in map view \(coordinate)")
+        }
     }
     
     func makeCoordinator() -> MapCoordinator {

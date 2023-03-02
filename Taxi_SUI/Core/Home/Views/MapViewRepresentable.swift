@@ -10,6 +10,7 @@ import MapKit
 
 struct MapViewRepresentable: UIViewRepresentable {
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    @Binding var mapState: MapViewState
     
     let mapView = MKMapView()
     let locationManager = LocationManager()
@@ -24,9 +25,20 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let coordinate = locationViewModel.selectedLocationCoordinate {
-            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
-            context.coordinator.configurePolyline(withDestinationcoordinate: coordinate)
+        print("DEBUG: Map state is \(mapState)")
+        
+        switch mapState {
+        case .noInput:
+            context.coordinator.clearMapViewAndRecenterOnUserLocation()
+            break
+        case .locationSelected:
+            if let coordinate = locationViewModel.selectedLocationCoordinate {
+                context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
+                context.coordinator.configurePolyline(withDestinationcoordinate: coordinate)
+            }
+            break
+        case .searchingForLocation:
+            break
         }
     }
     
@@ -41,6 +53,7 @@ extension MapViewRepresentable {
         
         let parent: MapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
+        var currentRegion: MKCoordinateRegion?
         
         // MARK: - Lifecycle
         
@@ -62,6 +75,8 @@ extension MapViewRepresentable {
                 ),
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             )
+            
+            self.currentRegion = region
             
             parent.mapView.setRegion(region, animated: true)
         }
@@ -117,6 +132,15 @@ extension MapViewRepresentable {
                 guard let route = response?.routes.first else { return }
                 
                 completion(route)
+            }
+        }
+        
+        func clearMapViewAndRecenterOnUserLocation() -> Void {
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            parent.mapView.removeOverlays(parent.mapView.overlays)
+            
+            if let currentRegion = currentRegion {
+                parent.mapView.setRegion(currentRegion, animated: true)
             }
         }
     }

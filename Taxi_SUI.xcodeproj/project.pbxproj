@@ -18,6 +18,7 @@
 		22D7FED929AE5FB700CA507D /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FED829AE5FB600CA507D /* LocationSearchView.swift */; };
 		22D7FEDB29AE64A600CA507D /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FEDA29AE64A600CA507D /* LocationSearchResultCell.swift */; };
 		22D7FEDD29AE703700CA507D /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FEDC29AE703700CA507D /* LocationSearchViewModel.swift */; };
+		22D7FEDF29AF520400CA507D /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FEDE29AF520300CA507D /* MapViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		22D7FED829AE5FB600CA507D /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		22D7FEDA29AE64A600CA507D /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		22D7FEDC29AE703700CA507D /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		22D7FEDE29AF520300CA507D /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		22D7FEC729A955AA00CA507D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22D7FEDE29AF520300CA507D /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				22D7FEDD29AE703700CA507D /* LocationSearchViewModel.swift in Sources */,
 				22D7FED929AE5FB700CA507D /* LocationSearchView.swift in Sources */,
 				22D7FECF29A959CB00CA507D /* LocationManager.swift in Sources */,
+				22D7FEDF29AF520400CA507D /* MapViewState.swift in Sources */,
 				22D7FED729AE4C6F00CA507D /* MapViewActionButton.swift in Sources */,
 				22D7FEB629A954D500CA507D /* Taxi_SUIApp.swift in Sources */,
 				22D7FECD29A9570A00CA507D /* MapViewRepresentable.swift in Sources */,

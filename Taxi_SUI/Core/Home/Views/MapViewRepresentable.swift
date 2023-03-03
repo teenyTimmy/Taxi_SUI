@@ -9,8 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MapViewRepresentable: UIViewRepresentable {
-    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     @Binding var mapState: MapViewState
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     
     let mapView = MKMapView()
     let locationManager = LocationManager()
@@ -100,8 +100,7 @@ extension MapViewRepresentable {
             anno.coordinate = coordinate
             
             parent.mapView.addAnnotation(anno)
-            parent.mapView.deselectAnnotation(anno, animated: true)
-            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true)
+            parent.mapView.selectAnnotation(anno, animated: true)
         }
         
         func configurePolyline(withDestinationcoordinate coordinate: CLLocationCoordinate2D) {
@@ -109,6 +108,10 @@ extension MapViewRepresentable {
             
             getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
+                
+                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 520, right: 32))
+                
+                self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
         }
         

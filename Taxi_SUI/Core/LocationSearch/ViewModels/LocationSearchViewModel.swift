@@ -20,6 +20,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
             searchComleter.queryFragment = queryFragment
         }
     }
+    var userLocation: CLLocationCoordinate2D?
     
     // MARK: - Lifecycle
     
@@ -57,6 +58,23 @@ class LocationSearchViewModel: NSObject, ObservableObject {
         let search = MKLocalSearch(request: searchRequest)
         
         search.start(completionHandler: completion)
+    }
+    
+    func computeRidePrice(forType type: RideType) -> Double {
+        guard let destinationCoordinate = selectedLocationCoordinate else { return 0.0 }
+        guard let userLocationCoordinate = self.userLocation else { return 0.0 }
+        
+        let userLocation = CLLocation(
+            latitude: userLocationCoordinate.latitude,
+            longitude: userLocationCoordinate.longitude
+        )
+        let destination = CLLocation(
+            latitude: destinationCoordinate.latitude,
+            longitude: destinationCoordinate.longitude
+        )
+        let tripDistanceInMeters = userLocation.distance(from: destination)
+        
+        return type.computePrice(for: tripDistanceInMeters)
     }
 }
 

@@ -32,4 +32,24 @@ enum RideType: Int, CaseIterable, Identifiable {
         case .uberBlackSuv: return "uber-black-suv"
         }
     }
+    
+    var baseFare: Double {
+        switch self {
+        case .uberX: return 5
+        case .uberXL: return 9
+        case .uberBlack: return 19
+        case .uberBlackSuv: return 23
+        }
+    }
+    
+    func computePrice(for distanceInMeters: Double) -> Double {
+        let distanceInMiles = distanceInMeters / 1600
+        
+        switch self {
+        case .uberX: return distanceInMiles * 1.5 + baseFare
+        case .uberXL: return distanceInMiles * 1.85 + baseFare
+        case .uberBlack: return distanceInMiles * 2.3 + baseFare
+        case .uberBlackSuv: return distanceInMiles * 2.5 + baseFare
+        }
+    }
 }

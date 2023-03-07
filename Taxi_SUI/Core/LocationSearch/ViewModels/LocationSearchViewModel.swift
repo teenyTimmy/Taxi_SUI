@@ -107,7 +107,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     func configurePickupAndDropoffTimes(with expectedTravelTime: Double) {
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "HH:mm a"
+        formatter.dateFormat = "HH:mm"
         
         pickupTime = formatter.string(from: Date())
         dropOffTime = formatter.string(from: Date() + expectedTravelTime)

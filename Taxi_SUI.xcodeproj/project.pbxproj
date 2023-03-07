@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2271BA5129B1F47700ADE5B2 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271BA5029B1F47700ADE5B2 /* RideType.swift */; };
 		2271BA5329B2107900ADE5B2 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271BA5229B2107900ADE5B2 /* Double.swift */; };
+		2271BA5529B63BB600ADE5B2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271BA5429B63BB600ADE5B2 /* Location.swift */; };
 		22D7FEB629A954D500CA507D /* Taxi_SUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FEB529A954D500CA507D /* Taxi_SUIApp.swift */; };
 		22D7FEBD29A954DB00CA507D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D7FEBC29A954DB00CA507D /* Preview Assets.xcassets */; };
 		22D7FECB29A9564400CA507D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D7FECA29A9564400CA507D /* HomeView.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		2271BA5029B1F47700ADE5B2 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		2271BA5229B2107900ADE5B2 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		2271BA5429B63BB600ADE5B2 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		22D7FEB229A954D500CA507D /* Taxi_SUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxi_SUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D7FEB529A954D500CA507D /* Taxi_SUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taxi_SUIApp.swift; sourceTree = "<group>"; };
 		22D7FEBC29A954DB00CA507D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -122,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				22D7FECE29A959CB00CA507D /* LocationManager.swift */,
+				2271BA5029B1F47700ADE5B2 /* RideType.swift */,
+				2271BA5429B63BB600ADE5B2 /* Location.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -191,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				22D7FEE329B0D7A700CA507D /* RideRequestView.swift */,
-				2271BA5029B1F47700ADE5B2 /* RideType.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				22D7FEE429B0D7A700CA507D /* RideRequestView.swift in Sources */,
 				2271BA5329B2107900ADE5B2 /* Double.swift in Sources */,
 				22D7FEDF29AF520400CA507D /* MapViewState.swift in Sources */,
+				2271BA5529B63BB600ADE5B2 /* Location.swift in Sources */,
 				22D7FED729AE4C6F00CA507D /* MapViewActionButton.swift in Sources */,
 				22D7FEB629A954D500CA507D /* Taxi_SUIApp.swift in Sources */,
 				22D7FECD29A9570A00CA507D /* MapViewRepresentable.swift in Sources */,
